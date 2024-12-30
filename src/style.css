@@ -1,0 +1,195 @@
+/* Default Settings */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(to bottom, #A9B4E4 70%, #2C76BB);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  background: #f5f5f5e1;
+  width: 100%;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  
+  /* Navlinks */
+  & > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+/* Hero Section */
+#hero {
+  background: url('/hero-img.jpg') no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 4rem;
+  
+  /* Title */
+  & > h1 {
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 0 1rem black;
+  }
+
+  /* Description */
+  & > p {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1rem;
+    text-shadow: 0 0 1rem black;
+  }
+}
+
+/* Travel Section */
+#travel {
+  padding-block: 8rem;
+  padding-inline: 4rem;
+
+  /* Title */
+  & > h2 {
+    text-align: center;
+    margin-block-end: 4rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+/* Travel Container */
+.travel-container {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Travel Card */
+.travel-card {
+  flex: 1;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  overflow: hidden;
+  box-shadow: 10px 10px 0 black;
+  cursor: pointer;
+  background-color: whitesmoke;
+
+  transition: all 0.25s;
+
+  /* Card when mouse over */
+  &:hover {
+    transform: scale(0.95) translateX(10px) translateY(10px);
+    box-shadow: 0 0 0 black;
+  }
+}
+
+/* Travel Card Contents */
+.travel-contents {
+  padding: 0.5rem 1.5rem;
+
+  /* Title */
+  & > h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-block-end: 1.5rem;
+  }
+
+  /* Description */
+  & > p {
+    font-size: 1.2rem;
+    color: #242424;
+    margin-block-end: 1rem;
+  }
+}
+
+/* Guide */
+#guide {
+  padding-block: 8rem;
+  padding-inline: 4rem;
+}
+
+/* Guide Card */
+.guide-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, black, #00000098);
+  color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 0 5px black;
+
+  & > img {
+    width: 250px;
+    border-radius: 50%;
+  }
+
+  & h2 {
+    font-size: 2rem;
+  }
+
+  & p:not(p:last-child) {
+    font-size: 1.5rem;
+    margin-block: 2rem;
+  }
+
+  & p:last-child {
+    font-size: 2rem;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .travel-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 840px) {
+  .guide-card {
+    flex-direction: column;
+  }
+}
